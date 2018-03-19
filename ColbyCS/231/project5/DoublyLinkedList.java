@@ -1,9 +1,9 @@
 package project5;
 /*
-*LinkedList.java
-* Owen Goldthwaite
-* 3/5/18
-*/
+ * DoublyLinkedList.java
+ * Owen Goldthwaite
+ * 3/18/2018
+ */
 import java.util.*;
 
 public class DoublyLinkedList<T> implements Iterable<T>

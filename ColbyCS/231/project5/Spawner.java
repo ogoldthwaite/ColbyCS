@@ -1,5 +1,9 @@
 package project5;
-
+/*
+ * Spawner.java
+ * Owen Goldthwaite
+ * 3/18/2018
+ */
 import java.util.Random;
 
 public class Spawner extends Agent

@@ -1,5 +1,9 @@
 package project5;
-
+/*
+ * CheckoutSimulation.java
+ * Owen Goldthwaite
+ * 3/18/2018
+ */
 import java.util.ArrayList;
 import java.util.Scanner;
 

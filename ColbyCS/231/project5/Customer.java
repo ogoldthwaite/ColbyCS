@@ -1,5 +1,9 @@
 package project5;
-
+/*
+ * Customer.java
+ * Owen Goldthwaite
+ * 3/18/2018
+ */
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;

@@ -1,4 +1,9 @@
 package project5;
+/*
+ * Cashier.java
+ * Owen Goldthwaite
+ * 3/18/2018
+ */
 
 import java.awt.Color;
 import java.awt.Graphics;

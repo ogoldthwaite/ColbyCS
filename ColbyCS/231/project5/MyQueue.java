@@ -1,5 +1,9 @@
 package project5;
-
+/*
+ * MyQueue.java
+ * Owen Goldthwaite
+ * 3/18/2018
+ */
 import java.util.Iterator;
 
 
