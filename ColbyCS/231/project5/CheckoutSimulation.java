@@ -24,6 +24,7 @@ public class CheckoutSimulation
 	 	runSimulation(x,y,c);
 	 	
 	 	scan.close();
+	 	System.out.println("hey");
 	}
 	
 	public static void runSimulation(int x, int y, int c) throws InterruptedException
