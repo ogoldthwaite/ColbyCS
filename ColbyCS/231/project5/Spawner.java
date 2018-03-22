@@ -10,6 +10,7 @@ public class Spawner extends Agent
 {		
 	public static boolean spawn = true; //used for clearing lines later
 	public static int count = 5;
+	public static float impChance = 0; // Chance of customer being an impatient customer
 	
 	public Spawner(double x0, double y0)
 	{
@@ -22,8 +23,16 @@ public class Spawner extends Agent
 		
 		if(spawn)
 		{
-			for (int i = 0; i < count; i++) 			
-				scape.addAgent(new Customer( rand.nextDouble() * scape.getWidth(), rand.nextDouble()*scape.getHeight() ) );	
+			if(rand.nextFloat() < impChance && CheckoutSimulation.tick%75 == 0) // 20% chance to add an impatient customer
+			{
+				for (int i = 0; i < count; i++) 			
+					scape.addAgent(new ImpatientCustomer( rand.nextDouble() * scape.getWidth(), rand.nextDouble()*scape.getHeight() ) );	
+			}
+			else
+			{
+				for (int i = 0; i < count; i++) 			
+					scape.addAgent(new Customer( rand.nextDouble() * scape.getWidth(), rand.nextDouble()*scape.getHeight() ) );	
+			}
 		}
 	}
 	

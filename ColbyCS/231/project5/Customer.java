@@ -12,9 +12,9 @@ import java.util.Random;
 
 public class Customer extends Agent
 {
-	private int items;
-	private boolean inLine;
-	private int time; //amount of time this agent took to perform operations, returned and added to total at end of sim.
+	protected int items;
+	protected boolean inLine;
+	protected int time; //amount of time this agent took to perform operations, returned and added to total at end of sim.
 	public static int method; // which line selection method is used
 	
 	public Customer(double x0, double y0)
@@ -75,7 +75,7 @@ public class Customer extends Agent
 		return this.items;
 	}
 	
-	public void updateState(Landscape scape)
+	public void updateState(Landscape scape) //updates state!
 	{
 		ArrayList<Cashier> counters = scape.getCashiers(); //Array list of Cashiers/Counters
 		
@@ -83,7 +83,7 @@ public class Customer extends Agent
 			this.selectLine(counters);
 	}
 	
-	private void selectLine(ArrayList<Cashier> counters) //Currently line selection method is random!
+	private void selectLine(ArrayList<Cashier> counters) //Line selected based on value of static int method
 	{
 		Random rand = new Random();
 		int met;
@@ -124,7 +124,7 @@ public class Customer extends Agent
 		
 	}
 	
-	public void draw(Graphics g)
+	public void draw(Graphics g) //draws stuff
 	{
 		//should draw a circle in a 5x5 box at agents pos. Pos must be casted to int?
 		g.setColor(Color.cyan);

@@ -10,7 +10,7 @@ import java.awt.Graphics;
 
 public class Cashier extends Agent //Cashier is CheckoutAgent
 {	
-	private MyQueue<Customer> line; //Currently using a customer type queue, NOT AGENT.
+	protected MyQueue<Customer> line; //Currently using a customer type queue, NOT AGENT.
 
 	public Cashier(double x0, double y0) 
 	{
@@ -60,6 +60,11 @@ public class Cashier extends Agent //Cashier is CheckoutAgent
 	
 		for(Customer c : line) //Every tick a customer is waiting for adds 1 time to their total time.
 			c.addTime();
+	}
+	
+	public MyQueue<Customer> getLine()
+	{
+		return this.line;
 	}
 	
 }

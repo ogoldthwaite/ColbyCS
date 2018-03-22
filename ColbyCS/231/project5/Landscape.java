@@ -62,7 +62,12 @@ public class Landscape
 	
 	public ArrayList<Double> getTimeList()
 	{
-		return this.timeList;
+		ArrayList<Double> toReturn = new ArrayList<Double>();
+		
+		for (Double double1 : timeList) {
+			toReturn.add(double1);
+		}
+		return toReturn;
 	}
 	
 	public int getHeight()
@@ -96,6 +101,8 @@ public class Landscape
 		{
 			if(a.getClass().equals(Cashier.class)) //Checking if agent a is a cashier or not
 				toReturn.add((Cashier) a);
+			else if(a.getClass().equals(SlowCashier.class))
+				toReturn.add((SlowCashier)a);
 		}		
 		return toReturn;
 	}
