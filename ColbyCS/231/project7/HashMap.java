@@ -1,4 +1,8 @@
 package project7;
+/*
+ * Owen Goldthwaite
+ * HashMap, it's like a map but it likes to smoke hash
+ */
 
 import java.util.ArrayList;
 import java.util.Comparator;
