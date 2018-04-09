@@ -40,6 +40,6 @@ public interface MapSet<K,V> {
     // Returns the number of key-value pairs in the map.
     public int size();
         
-    // removes all mappings from this MapSet
+    // removes all mappings from this MapSet 
     public void clear();
 }
