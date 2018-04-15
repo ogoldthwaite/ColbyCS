@@ -2,6 +2,7 @@ package project6;
 
 import java.util.Comparator;
 
+
 /*
  * TNode.java A node of the Mappy tree!
  * Owen Goldthwaite
@@ -28,7 +29,7 @@ public class TNode <K,V>
 		this.right = right;
 	}
 	
-	public V put(K key, V value, Comparator<K> comp)
+	public V put(K key, V value, Comparator<K> comp) //Does the put work! Recursively finds the place to put
 	{
 		int toCompare = comp.compare(key, this.entry.getKey());
 		
@@ -47,16 +48,17 @@ public class TNode <K,V>
 		 }
 		 else 
 		 {
-			 if (right == null) 
+			 if (right == null)
 				 right = new TNode<K, V> (key, value, null, null);
 			 else 
 				 right.put(key, value, comp);
 		 }
+		
+		return null;
 		 
-		 return null;
 	}
 	
-	public V get(K key, Comparator<K> comp)
+	public V get(K key, Comparator<K> comp) //Does the get work! Recursively finds the node to get!
 	{
 		 int toCompare = comp.compare(key, this.entry.getKey());
 
@@ -77,4 +79,23 @@ public class TNode <K,V>
 		 }
 		 
 	}
+	
+    public void preOrder(TNode<K,V> node, String stuff) //Just prints preorder, here for me
+    {
+    	//stuff += node.entry.getValue() +" ";
+    	
+    	System.out.println(node.entry.getKey() + ": " + node.entry.getValue());
+    	
+    	if(node.left != null)
+    		preOrder(node.left, stuff);
+    	
+    	if(node.right != null)
+    		preOrder(node.right, stuff);
+    }
+    
+	public String toString()
+	{
+		return "(" + entry.getKey() + ", " + entry.getValue() + ")";
+	}
+	
 }
