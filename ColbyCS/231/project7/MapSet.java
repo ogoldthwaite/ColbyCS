@@ -42,4 +42,7 @@ public interface MapSet<K,V> {
         
     // removes all mappings from this MapSet 
     public void clear();
+    
+    public int getEfficiency(); //returns an int denoting how efficient this is
+    
 }

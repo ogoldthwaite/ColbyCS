@@ -225,6 +225,32 @@ public class BSTMap<K,V> implements MapSet<K,V>
 		else
 			return list.size();
 	}
+	
+	public int getEfficiency()
+	{
+	    if(this.size() == 0)
+	        return 0;	    
+	    else
+	    {
+	        TNode<K,V> node = root;
+	        return getHeight(node);
+	    }
+	}
+	
+	private int getHeight(TNode<K,V> aNode) {
+	    if (aNode == null) 
+	        return -1;
+	    
+
+	    int lefth = getHeight(aNode.left);
+	    int righth = getHeight(aNode.right);
+
+	    if (lefth > righth) {
+	        return lefth + 1;
+	    } else {
+	        return righth + 1;
+	    }
+	}
 
 	public void clear() {
 		// TODO Auto-generated method stub

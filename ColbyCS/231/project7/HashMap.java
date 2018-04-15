@@ -11,12 +11,27 @@ public class HashMap<K,V> implements MapSet<K,V>
 {
 	private Object[] table;
 	private int collisions;
+	private int tableSize;
 	
-	@SuppressWarnings("unchecked")
 	public HashMap() //100 default size
 	{
 		collisions = 0;
 		table = new Object[100];
+		tableSize = 0;
+		initTable();
+	}
+	
+	public HashMap(int initSize) //Custom initial size
+	{
+		collisions = 0;
+		table = new Object[initSize];
+		tableSize = 0;
+		initTable();
+	}
+	
+	@SuppressWarnings("unchecked")
+	private void initTable() //Just fills every table spot with an empty BSTMap
+	{
 		Comparator<String> comp = new StringAscending();
 		for (int i = 0; i < table.length; i++) 
 		{
@@ -24,33 +39,60 @@ public class HashMap<K,V> implements MapSet<K,V>
 		}
 	}
 	
-	@SuppressWarnings("unchecked")
-	public HashMap(int initSize) //Custom initial size
+	private int getIndex(K key) //returns index of key inside array
 	{
-		collisions = 0;
-		table = new Object[initSize];
-		Comparator<String> comp = new StringAscending();
-		for (int i = 0; i < table.length; i++) 
-		{
-			table[i] = new BSTMap<K,V>((Comparator<K>) comp);
-		}
+		return Math.abs(key.hashCode()) % table.length;
 	}
+	
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public V put(K key, V value) //May change this!
 	{
-		int index = key.hashCode() % table.length; //generating index
+		tableSize++;
+		int index = getIndex(key); //generating index
 		BSTMap<K,V> map = (BSTMap<K,V>) table[index];
 		V toReturn = map.get(key);
-		if(map.size() > 0) //Incrementing collisions if there is something at the spot already
-			collisions++;
 		
+		if(map.size() > 0) //Incrementing collisions if there is something at the spot already
+		{
+			collisions++;
+			tableSize--; //decreasing table size by one because it's incremented at beginning of code, silly way to do this but W/E
+		}
 		map.put(key, value);
 		
+		if(tableSize > table.length/2) //enlarge if over half array slots are filled
+		{
+			tableSize = 0;
+			enlarge();
+		}
 		return toReturn;
 	}
 
+	@SuppressWarnings("unchecked")
+	private void enlarge() //double array table size
+	{
+		Object[] oldMap = table;
+		table = new Object[oldMap.length*2];
+		initTable();
+		
+		for (int i = 0; i < oldMap.length; i++) 
+		{
+			BSTMap<K, V> map = (BSTMap<K, V>)oldMap[i];
+			ArrayList<KeyValuePair<K, V>> sets = map.entrySet();
+			
+			if(sets != null)
+			{
+				for(KeyValuePair<K, V> entry : sets)	
+				{
+					if (entry != null) 
+						put(entry.getKey(), entry.getValue());
+				}
+			}
+		}
+	}
+	
+	
 	@Override
 	public boolean containsKey(K key) 
 	{
@@ -64,7 +106,8 @@ public class HashMap<K,V> implements MapSet<K,V>
 	@Override
 	public V get(K key) //May change this!
 	{
-		int index = key.hashCode() % table.length; //generating index
+		int index = getIndex(key); //generating index
+		
 		BSTMap<K,V> map = (BSTMap<K,V>) table[index];
 		V toReturn = map.get(key);
 		
@@ -130,6 +173,11 @@ public class HashMap<K,V> implements MapSet<K,V>
 		
 	}
 	
+	public int getEfficiency() //returns collisions
+	{
+		return this.collisions;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public String toString()
 	{
@@ -153,6 +201,14 @@ public class HashMap<K,V> implements MapSet<K,V>
 		map.put("b", 2);
 		map.put("c", 1);
 		map.put("d", 1);
+		map.put("e", 1);
+		map.put("f", 2);
+		map.put("g", 1);
+		map.put("h", 1);
+		map.put("i", 1);
+		map.put("j", 2);
+		map.put("k", 1);
+		map.put("l", 1);
 		map.put("Aa", 5);
 		map.put("BB", 6);
 		map.put("Aa", 8);
@@ -161,6 +217,7 @@ public class HashMap<K,V> implements MapSet<K,V>
 		System.out.println(map.get("Aa"));
 		System.out.println(map.values());
 		
+		System.out.println(map.containsKey("z"));
 		System.out.println("Collisions: " + map.collisions);
 		
 		
