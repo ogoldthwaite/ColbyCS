@@ -1,4 +1,4 @@
-package project7;
+package project8;
 /*
  * BSTMap.java Does the stuff using a BSTMap!
  * Owen Goldthwaite
@@ -10,11 +10,12 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class WordCounter
+public class WordCounter implements Runnable
 {
 	private MapSet<String, Integer> map;
 	public static ConcurrentHashMap<String, Integer> coolMap = new ConcurrentHashMap<String, Integer>();
 	private int wordCount;
+	private String fileString;
 	
 	public WordCounter(boolean useHashTable)
 	{
@@ -25,6 +26,21 @@ public class WordCounter
 		else
 			map = new BSTMap<String, Integer>((Comparator<String>) comp); 
 		
+		fileString = "";
+		wordCount = 0;
+		
+	}
+	
+	public WordCounter(String fileString, boolean useHashTable)
+	{
+		Comparator<String> comp = new StringAscending(); 
+		
+		if(useHashTable)
+			map = new HashMap<String, Integer>(100); //10 initial size, could change
+		else
+			map = new BSTMap<String, Integer>((Comparator<String>) comp); 
+		
+		this.fileString = fileString;
 		wordCount = 0;
 		
 	}
@@ -95,12 +111,17 @@ public class WordCounter
 	
 	public int getCount(String word)
 	{
-		return (int) map.get( word);
+		Integer toReturn = (Integer)map.get(word);
+		if(toReturn == null)
+			return 0;
+		else 
+			return toReturn;
+		
 	}
 	
 	public double getFreq(String word) //returns a words freq
 	{
-		return (float)this.getCount(word)/wordCount;
+		return (double)this.getCount(word)/wordCount;
 	}
 	
 	public MapSet<String, Integer> getMap()
@@ -242,6 +263,20 @@ public class WordCounter
 		System.out.println(wc.getMap().entrySet());
 		
 		wc.writeWordCountFile("hey.txt");
+		
+	}
+
+	@Override
+	public void run() 
+	{
+		try
+        {
+            analyze(fileString);
+        }
+        catch (Exception e)
+        {
+            System.out.println ("Exception caught!");
+        }
 		
 	}
 	

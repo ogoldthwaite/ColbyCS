@@ -9,6 +9,7 @@ public class ThreadedWordCountRunner
 {
 	private static boolean useHashTable;
 	private static WordCounter wc;
+	//public static ConcurrentLinkedQueue<MapSet<String, Integer>> maps = new ConcurrentLinkedQueue<MapSet<String, Integer>>();
 	
 	public static void main(String[] args) throws IOException, InterruptedException
 	 {
@@ -69,8 +70,11 @@ public class ThreadedWordCountRunner
 				t.join();
 		     
 		     //Adding up all the word count files!
-		     for (int j = 0; j < fileNames.size(); j++) 
-				wc.appendWordCountFile(fileNames.get(j)+"_result_"+j);
+//		     for (MapSet<String, Integer> map : maps) 
+//				wc.appendMap(map);
+			 
+//		     for (int j = 0; j < fileNames.size(); j++) 
+//				wc.appendWordCountFile(fileNames.get(j)+"_result_"+j);
 		     
 		     time = System.currentTimeMillis() - time;	
 			 System.out.println("Analyse Time Taken for Analyze " + i +": " + time);
@@ -102,7 +106,8 @@ public class ThreadedWordCountRunner
 		
 		timeSum = timeSum / times.size();
 		System.out.println("Average Time of Middle 3 Analyse Times: " + timeSum);
-		System.out.println("Efficiency (Collisions or Height): " + wc.getMap().getEfficiency());
+		System.out.println(WordCounter.coolMap.size());
+		//System.out.println("Efficiency (Collisions or Height): " + wc.getMap().getEfficiency());
 			     
 	     scan.close();
 	}

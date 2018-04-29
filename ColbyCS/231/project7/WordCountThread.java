@@ -19,7 +19,9 @@ public class WordCountThread implements Runnable //Each instance of this class i
         try
         {
             wc.analyze(fileName);
-            wc.writeWordCountFile(fileName+"_result_"+id);
+            wc.appendMap(wc.getMap());
+           //ThreadedWordCountRunner.maps.add(wc.getMap());
+           //wc.writeWordCountFile(fileName+"_result_"+id);
         }
         catch (Exception e)
         {
