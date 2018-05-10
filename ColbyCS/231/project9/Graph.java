@@ -59,8 +59,14 @@ public class Graph
 		
 	}
 	
+	public ArrayList<Vertex> getVertList()
+	{
+		return this.verts;
+	}
+	
 	public void printVertices() //Just for testing
 	{
+		System.out.println(verts.size());
 		System.out.println(verts);
 	}
 	
