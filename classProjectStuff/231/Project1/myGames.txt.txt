@@ -1,0 +1,17 @@
+pScore: 0 || dScore: 0
+pHand: 17 || dHand: 10
+------------
+pScore: 0 || dScore: 1
+pHand: 17 || dHand: 19
+
+pScore: 0 || dScore: 0
+pHand: 11 || dHand: 11
+------------
+pScore: 1 || dScore: 0
+pHand: 17 || dHand: 25
+
+pScore: 0 || dScore: 0
+pHand: 10 || dHand: 11
+------------
+pScore: 0 || dScore: 1
+pHand: 17 || dHand: 20
