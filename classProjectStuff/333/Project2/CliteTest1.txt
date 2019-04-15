@@ -1,0 +1,19 @@
+int main() {
+  /* This is a multi
+   * line
+   * comment
+   */  
+
+  int a = 6;
+  //A comment on this line!!
+  int b = 5.0;
+
+  if( a < b ) {
+    a = a + b;
+  }
+//This is another single line comment!!
+
+/* This is another multi
+ * line
+ * comment! */
+}

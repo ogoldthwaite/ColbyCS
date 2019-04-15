@@ -1,0 +1,4 @@
+0.272 1 2 3 45 67.89 6236
+6236.0
+Hello there, are you ok?
+I am ok!

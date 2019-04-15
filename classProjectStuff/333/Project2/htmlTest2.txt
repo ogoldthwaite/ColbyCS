@@ -1,0 +1,313 @@
+
+
+<?
+include('/www/html/maxwell/php/courses-utils.php');
+
+courseHeader("CS 333: Project 2", "Course 333CSAH", '../..', "Spring 2018", "");
+
+?>
+<div id="content">	 
+
+    <p class="lead">Due: Wednesday 22 February 2018</p>
+
+    <h2>Part I: Lexical Analysis</h2>
+		
+    <p>The first thing we have to do with any programming language is build a 
+				lexical analyzer that converts a text string into a series of tokens. 
+				There are lots of tools for handling this. For this assignment, you'll 
+				make use of the <em>Flex</em> lexical analysis tool and 
+				build a few different parsers.</p>
+		
+    <h3>Tasks</h3>
+		<p>Flex is an open source lexical analysis tool. The way it works is you 
+				first create an input file that defines symbols and production rules that 
+				describe how to parse a text file. Then you run Flex and it produces a C 
+				file. You can then compile the C file and run it on some input.</p>
+
+    <p>As an example, consider the following <samp>Hello World</samp> program 
+				for Flex. The line beginning with <code>blah</code> defines a rule that 
+				says to replace instances of <code>blah</code> with <code>hello 
+				world</code>.</p>
+
+    <pre>
+			/**
+			 * Hello World: replace "blah" with "hello world"
+			 */
+			 
+			 %%
+			 
+			 blah    printf("hello world");
+			 
+			 %%
+			 
+			 int main ( int argc, char *argv[] ) {
+				 
+				 yylex();
+			 
+			 }
+    </pre>
+		
+    <p>If you type the above into a file called <samp>replace.yy</samp> and 
+				then execute the following commands, you get the resulting behavior. </p>
+
+    <code> $ flex replace.yy </code> </br>
+    <code> $ gcc -o repl lex.yy.c -ll </code></br>
+		<code> $ echo "blah and another blah" | ./repl </code></br>
+		<code> hello world and another hello world </code></br></br>
+		
+		<p>The <a href="http://dinosaur.compilertools.net/flex/">documentation for 
+				flex</a> provides many more examples and a description of the syntax.</p>
+		
+		<p>Note that flex is based on regular expressions, which are similar to the 
+				extended BNF notation we've gone over in class. There is lots of 
+				<a href="http://www.regular-expressions.info"> documentation for regular 
+				expressions</a>, and they can be very useful in many situations.</p>
+		
+		<ol>
+				<li><p> Using flex, make a program called <samp>encode</samp> that takes 
+						any character in a-z or A-Z and shifts it 13 spaces forward in the 
+						alphabet, with wraparound from z back to a. Run it on a text file of 
+						your choice. You can test that it is working correctly by running the 
+						output of <samp>encode</samp> through <samp>encode</samp> again. The
+						result should be the original document.  Make use of the
+						fact that you can get the ASCII value of any character by
+						wrapping it in single quotes (e.g. 'a' is the value
+						97). You can treat it as an integer and do math.</p>
+				</li>
+				
+				<li><p>Using Flex, make a program that reads in a text file and tells you 
+						not only the number of rows and characters, but also how many of each 
+						vowel <samp>[a, e, i, o, u]</samp> are in the file.</p>
+				</li>	
+				
+				<li><p>Make a program that strips an html file of all tags and comments. 
+						It should also strip the file of all whitespace except for a blank line 
+						wherever there used to be a <code>&lt;p&gt;</code> tag. Test it on this 
+						web page. Here is a <a 
+href="p2.txt">downloadable 
+						version</a>.</p>
+						
+						<p>Note that this is challenging to do in a way that make the output 
+								reasonably formatted. As an extension, you can make your program do 
+								more sophisticated things like replace 
+								<code>&amp;gt;</code> with <code>&gt;</code>.</p>
+				</li>	
+				
+				<li><p>Implement a parser for Clite. For now, the output of your program 
+						should just be a sequence of strings, one per line. Please use the 
+						following strings.</p>
+						
+						<table class="table table-striped">
+								<tbody>
+										<tr>
+												<td>Integer-&lt;value&gt;</td>
+												<td>A sequence of one or more digits.</td>
+										</tr>
+										<tr>
+												<td>Float-&lt;value&gt;</td>
+												<td>An integer, a dot, and another integer.</td>
+										</tr>
+										<tr>
+												<td>Keyword-&lt;word&gt;</td>
+												<td>if | else | while | for | int | float</td>
+										</tr>
+										<tr>
+												<td>Identifier-&lt;name&gt;</td>
+												<td>Legal names/identifiers.</td>
+										</tr>
+										<tr>
+												<td>Assignment</td>
+												<td> = </td>
+										</tr>
+										<tr>
+												<td>Comparison-&lt;symbol&gt;</td>
+												<td>== | &lt; | &gt; | &lt;= | &gt;=</td>
+										</tr>
+										<tr>
+												<td>Operator-&lt;symbol&gt;</td>
+												<td>+ | - | * | / </td>
+										</tr>
+										<tr>
+												<td>Open-bracket</td>
+												<td> { </td>
+										</tr>
+										<tr>
+												<td>Close-bracket</td>
+												<td> } </td>
+										</tr>
+										<tr>
+												<td>Open-paren</td>
+												<td> ( </td>
+										</tr>
+										<tr>
+												<td>Close-paren</td>
+												<td> ) </td>
+										</tr>
+								</tbody>
+						</table>	
+						
+						<p>Ideally, your program should also ignore comments. You can test your 
+								program on this <a 
+href="p2-example.c">example</a>. You 
+								should get something like <a 
+href="p2-example-result.txt">this 
+								result</a>.</p>	
+		</ol>	
+		
+		<h2>Part II: Selected Langauges</h2>
+
+		<p>Select <em>two</em> languages you want to learn this
+		semester. You may work with a partner for the non-C language
+		tasks.  You and your partner need to choose the same languages.
+		You will hand in your C work separately, but have a single wiki and
+		handin for your non-C language assignments.</p> 
+		
+		<h3>Tasks</h3>
+		<ol>
+				<li class="space" >Organize your wiki pages. There should be a
+						top-level page for the course from which a user can
+						navigate to each language (C and your two chosen
+						languages). Each language page should have a link to each
+						project page.  If you are working with a partner, there
+						should be only one page for each of your non-C languages,
+						but you both should have the structure in place to
+						navigate to it.  In other words, the grader should be able
+						to get to all the pages of your projects from your
+						personal wiki space. 
+
+						<p>Make sure there is a link to your project 1 on your top
+								level page for the course. </p>
+
+						<p><b>Having a properly organized wiki space is worth 3
+								points on this project.</b></p>
+				</li>
+
+				<li class="space">For each of the two lauguages, create a wiki page for Project 2.</li>
+
+				<li class="space">
+						The first section of each wiki page should list a set of
+						language resources.  Spend some time searching for useful
+						resources, documentation, and formal descriptions of the
+						language. Organize them in a useful way and annotate the
+						links (e.g. "I found this site useful for explaining the
+						concept of ...").  Think of it as your reference manual
+						for the rest of the semester, so make it useful for you.</li>
+
+				<li class="space">Write a "hello world" type of program for
+						each language. Do something more interesting than printing
+						hello world (i.e. don't just copy and paste a hello world
+						example and do something more than print text). A snapshot
+						of your program and its outputs are the second section of
+						the wiki page.</li>
+		</ol>
+		
+		<hr/>
+		<h2>Extensions</h2>
+
+		<p>
+				Extensions are a way for you to customize the assignment and
+				learn something of interest to you.  Pick a task and dig
+				deeper.  Pick a different language and learn something about
+				it.  Do something interesting.  The following are possible
+				extensions, but you can choose your own.  <b>Extensions can be
+				undertaken individually or jointly.</b></p>
+
+		<ol>
+				<li class="space"> Get comments working properly in your parser for Clite. Be sure to 
+						try out a variety of examples.</li>
+				<li class="space"> Make the encoder more complex.</li>
+				<li class="space"> Make the parser for analyzing a document to some more interesting 
+						things.</li>
+				<li class="space">A perfectly acceptable extension for any assignment going forward is 
+						to do a third language. The third language should have its own 
+						subdirectory. Under this subdirectory, there should be a set of links 
+						for all projects where you inluded this language.</li>
+		</ol>	
+
+		<hr/>
+    <h2>Submission</h2>
+    <p>The submission of this project has three components:</p>
+		<ol>
+				<li class="space">Code: Your source code for the tasks of part
+						I and the "hello world" programs of your two selected
+						languages should be submitted to the fileserver in a
+						project2 directory in Private. If you pick a third
+						language as your extension, its "hello world" program
+						should also be submitted to the fileserver. Each task of
+						part I should have a .yy file and a, .c file.  It should
+						be clear which files correspond to which tasks. Note that
+						the quality of your comments (in all of your code files)
+						counts toward your grade.</em> 
+				</li>
+
+				<li class="space">README: Submit a README file to the fileserver for your 
+						parsers (flex tasks). The README file can be a .txt file. It should 
+						be well-organized such that readers can easily understand the usage and 
+						the outputs of each parser. In addition, any known bugs of each parser 
+						should be indicated in the README file.
+				</li>
+
+				<li class="space">Wiki Report: The C report for this project
+				should be a 1-paragraph abstract explaining what you did in
+				your own language.</li>
+
+				<li class="space">Wiki Report: The non-C language pages for this project
+						should have the following elements.
+
+						<ul>
+								<li class="space">Title of the project and your name</li>
+								<li class="space">Resources for the selected languages</li>
+								<li class="space">The snapshot/code of the "hello world" programs</li>
+								<li class="space">The outputs of the "hello world" programs</li>
+						</ul>
+
+						<p><em>To check whether you've made your write-up well organized, 
+								you may ask yourself the following questions</em>:</p>
+
+						<ul>
+								<li class="space">Is there a main page that indicates the main purpose of the page 
+										collection (e.g. this is a set of pages describing how a particular 
+										language implements standard programming language features)?</li>
+								<li class="space">Does the main page have a title (e.g. Ying Li CS 333, Ying’s 
+										Explorations in R, Ying’s Notes in JS)?</li>
+								<li class="space">On the main page, are there clearly organized links to supporting 
+										pages?</li>
+								<li class="space">Does each supporting page have a title that indicates its role in 
+										the set of pages?</li>
+						</ul>
+						
+						<p>Here is a recommended layout.</p>
+						<pre>
+	Ying Li CS333
+	|
+	|_Ying’s Explorations in R
+	| |
+	| |_P1
+	| |_P2
+	| |_...
+	|
+	|_Ying’s Notes in JS
+	| |
+	| |_P1
+	| |_P2
+	| |_...
+						</pre>
+						
+		</ol>
+		<p>Please note that <b>it is your responsibility to explicitly indicate the 
+				extensions you have undertaken</b>. If you complete extensions
+				for the parsers, please indicate explicitly in the code and
+				README file. If you complete extensions in selected languages,
+				please indicate this explicitly in your wiki report. Because
+				extensions can be individual or joint, you need to indicate
+				this along with your description of the extension. If no
+				indication is provided, the grader will assume the extensions
+				were completed jointly.</p>	
+
+		<hr/>		
+</div> <!-- container -->
+
+
+<?
+maxwellFooter('2018');
+?>

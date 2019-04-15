@@ -1,0 +1,10 @@
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+a
+A
+b
+B 
+x
+X 
+z
+Z
