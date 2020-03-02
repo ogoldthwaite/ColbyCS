@@ -893,8 +893,8 @@ class DisplayApp:
             self.rightcntlframe.config(background=random.sample(COLORS, 1)[0])
             x = random.randint(0, self.canvas.winfo_width())
             y = random.randint(0, self.canvas.winfo_height())
-            size = random.randint(10,50)
-            self.canvas.create_text(x, y, text="LIT", font=("Times New Roman", size, "bold"), fill=random.sample(COLORS, 1)[0], tag="LITtext")           
+            size = random.randint(10,25)
+            self.canvas.create_text(x, y, text="Thanks for reviewing my app!", font=("Times New Roman", size, "bold"), fill=random.sample(COLORS, 1)[0], tag="LITtext")           
             
             if(self.litTunes):
                 webbrowser.open_new("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
