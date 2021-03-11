@@ -1,0 +1,12 @@
+# signal name, bit in signal, type of board widget, which bit in board widget, segment index (optional)
+reset,0,key,0
+P1,0,key,1
+P2,0,key,2
+P3,0,key,3
+rled,0,rLED,0
+rled,1,rLED,1
+rled,2,rLED,2
+gled,0,gLED,0
+clk,0,rLED,9
+
+
