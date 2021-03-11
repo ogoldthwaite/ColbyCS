@@ -1,0 +1,25 @@
+# signal name, bit in signal, type of board widget, which bit in board widget, segment index (optional)
+# Light output to green lights
+lightsig,0,GLED,0
+lightsig,1,GLED,1
+lightsig,2,GLED,2
+lightsig,3,GLED,3
+lightsig,4,GLED,4
+lightsig,5,GLED,5
+lightsig,6,GLED,6
+lightsig,7,GLED,7
+# light output for red lights
+irview,0,RLED,0
+irview,1,RLED,1
+irview,2,RLED,2
+irview,3,RLED,3
+irview,4,RLED,4
+irview,5,RLED,5
+irview,6,RLED,6
+irview,7,RLED,7
+irview,8,RLED,8
+irview,9,RLED,9
+
+
+
+
