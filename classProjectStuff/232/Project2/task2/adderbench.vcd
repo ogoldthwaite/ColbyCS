@@ -1,0 +1,207 @@
+$date
+  Mon Sep 21 16:04:53 2020
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module adderbench $end
+$var reg 4 ! a[3:0] $end
+$var reg 4 " b[3:0] $end
+$var reg 5 # answer[4:0] $end
+$var reg 7 $ disp0[6:0] $end
+$var reg 7 % disp1[6:0] $end
+$var reg 4 & otheranswer[3:0] $end
+$var reg 1 ' subt $end
+$scope module c0 $end
+$var reg 4 ( a[3:0] $end
+$var reg 7 ) result[6:0] $end
+$upscope $end
+$scope module c1 $end
+$var reg 4 * a[3:0] $end
+$var reg 7 + result[6:0] $end
+$upscope $end
+$scope module c2 $end
+$var reg 4 , a[3:0] $end
+$var reg 4 - b[3:0] $end
+$var reg 1 . subt $end
+$var reg 5 / answer[4:0] $end
+$var reg 1 0 tempa[0:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b0000 !
+b0000 "
+b00000 #
+b1000000 $
+b1000000 %
+b0000 &
+0'
+b0000 (
+b1000000 )
+b0000 *
+b1000000 +
+b0000 ,
+b0000 -
+0.
+b00000 /
+bU 0
+#25000000
+b0001 !
+b0001 "
+b00010 #
+b0100100 $
+b0010 (
+b0100100 )
+b0001 ,
+b0001 -
+b00010 /
+#50000000
+b0010 !
+b0010 "
+b00100 #
+b0011001 $
+b0100 (
+b0011001 )
+b0010 ,
+b0010 -
+b00100 /
+#75000000
+b0011 !
+b0011 "
+b00110 #
+b0000010 $
+b0110 (
+b0000010 )
+b0011 ,
+b0011 -
+b00110 /
+#100000000
+b0100 !
+b0100 "
+b01000 #
+b0000000 $
+b1000 (
+b0000000 )
+b0100 ,
+b0100 -
+b01000 /
+#125000000
+b0101 !
+b0101 "
+b01010 #
+b0001000 $
+b1010 (
+b0001000 )
+b0101 ,
+b0101 -
+b01010 /
+#150000000
+b0110 !
+b0110 "
+b01100 #
+b1000110 $
+b1100 (
+b1000110 )
+b0110 ,
+b0110 -
+b01100 /
+#175000000
+b0111 !
+b0111 "
+b01110 #
+b0000110 $
+b1110 (
+b0000110 )
+b0111 ,
+b0111 -
+b01110 /
+#200000000
+b1000 !
+b1000 "
+b10000 #
+b1000000 $
+b1111001 %
+b0001 &
+b0000 (
+b1000000 )
+b0001 *
+b1111001 +
+b1000 ,
+b1000 -
+b10000 /
+#225000000
+b1001 !
+b1001 "
+b10010 #
+b0100100 $
+b0010 (
+b0100100 )
+b1001 ,
+b1001 -
+b10010 /
+#250000000
+b1010 !
+b1010 "
+b10100 #
+b0011001 $
+b0100 (
+b0011001 )
+b1010 ,
+b1010 -
+b10100 /
+#275000000
+b1011 !
+b1011 "
+b10110 #
+b0000010 $
+b0110 (
+b0000010 )
+b1011 ,
+b1011 -
+b10110 /
+#300000000
+b1100 !
+b1100 "
+b00000 #
+b1000000 $
+b1000000 %
+b0000 &
+1'
+b0000 (
+b1000000 )
+b0000 *
+b1000000 +
+b1100 ,
+b1100 -
+1.
+b00000 /
+#325000000
+b1101 !
+b1101 "
+b1101 ,
+b1101 -
+#350000000
+b1110 !
+b1110 "
+b1110 ,
+b1110 -
+#375000000
+b1111 !
+b1111 "
+b1111 ,
+b1111 -
+#400000000
+b0111 !
+b0111 "
+b0111 ,
+b0111 -

@@ -1,0 +1,22 @@
+v 4
+file . "task2/hexdisplay.vhd" "b7b79388332310a2c08ba8375a44e82a07c0c741" "20200921184013.541":
+  entity hexdisplay at 3( 22) + 0 on 27;
+  architecture rtl of hexdisplay at 17( 229) + 0 on 28;
+file . "task2/hexbench2.vhd" "22d13f5225b5f18ad11f4b01b2587ef4e2923998" "20200921184013.538":
+  entity hexbench2 at 5( 83) + 0 on 25;
+  architecture one of hexbench2 at 12( 196) + 0 on 26;
+file . "task2/fourbitadder.vhd" "3b02a0db3fd17e10939780570e764500cf71bc03" "20200921184013.538":
+  entity fourbitadder at 2( 49) + 0 on 23;
+  architecture behavior of fourbitadder at 16( 292) + 0 on 24;
+file . "task2/adderbench.vhd" "48583ab28f28cca1e0edc11fbf1c2e030f2a6cd0" "20200921184013.537":
+  entity adderbench at 6( 61) + 0 on 21;
+  architecture test of adderbench at 14( 174) + 0 on 22;
+file . "boxdriver.vhd" "83e053562acdb52a24c187d1ca888339cc1c0c88" "20200920140808.482":
+  entity boxdriver at 4( 50) + 0 on 11;
+  architecture rtl of boxdriver at 18( 272) + 0 on 12;
+file . "boxtest.vhd" "a2199c4648679f0f0787eee86b38e50c90f7a22b" "20200920140808.483":
+  entity boxtest at 6( 61) + 0 on 13;
+  architecture test of boxtest at 12( 142) + 0 on 14;
+file . "task1/hextest.vhd" "ef5293b9fa4b696122092f31d93282e7924871b5" "20200920150142.363":
+  entity hextest at 6( 61) + 0 on 19;
+  architecture test of hextest at 12( 142) + 0 on 20;

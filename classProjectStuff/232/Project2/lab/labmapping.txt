@@ -1,0 +1,5 @@
+# signal name, bit in signal, type of board widget, which bit in board widget, segment index (optional)
+Aout,0,HEX,0,2
+Aout,1,HEX,0,3
+Aout,2,HEX,0,4
+Aout,3,HEX,0,6
