@@ -1,0 +1,17 @@
+# setup
+MOVEI 0 RA
+MOVEI 1 RB
+MOVEI 89 RD
+
+# loop
+loop:
+BRAO returnproc
+MOVE RB RA
+MOVE RC RB
+SUB RC RD RE
+ADD RA RD RA
+BRAZ breakout
+BRA loop
+
+breakout:
+OPORT RB

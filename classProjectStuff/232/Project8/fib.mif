@@ -1,0 +1,15 @@
+-- program memory file for fib.a
+DEPTH = 256;
+WIDTH = 16;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = BIN;
+CONTENT
+BEGIN
+00 : 1111100000000000; -- move 0 to RA
+01 : 1111100000001001; -- move 1 to RB
+02 : 1000000001000010; -- RC = RA + RB, loop start
+03 : 1111000100000000; -- Move RB to RA
+04 : 1111001000000001; -- Move RC to RB
+05 : 0010000000000010; -- branch to start of loop, spot 2
+[06..FF] : 1111111111111111;
+END
