@@ -1,0 +1,80 @@
+Batch Size:64 Epochs:10 Dense Count:128 2nd Dropout %:0.5
+Accuracy: 0.9918
+Train Time: 76578
+
+Batch Size:128 Epochs:10 Dense Count:128 2nd Dropout %:0.5
+Accuracy: 0.9917
+Train Time: 48739
+
+Batch Size:256 Epochs:10 Dense Count:128 2nd Dropout %:0.5
+Accuracy: 0.9918
+Train Time: 35412
+
+Batch Size:128 Epochs:8 Dense Count:128 2nd Dropout %:0.5
+Accuracy: 0.9915
+Train Time: 39066
+
+Batch Size:128 Epochs:10 Dense Count:128 2nd Dropout %:0.5
+Accuracy: 0.9904
+Train Time: 48590
+
+Batch Size:128 Epochs:12 Dense Count:128 2nd Dropout %:0.5
+Accuracy: 0.9912
+Train Time: 59143
+
+Batch Size:128 Epochs:10 Dense Count:64 2nd Dropout %:0.5
+Accuracy: 0.9889
+Train Time: 47646
+
+Batch Size:128 Epochs:10 Dense Count:128 2nd Dropout %:0.5
+Accuracy: 0.991
+Train Time: 48545
+
+Batch Size:128 Epochs:10 Dense Count:256 2nd Dropout %:0.5
+Accuracy: 0.9921
+Train Time: 53840
+
+Batch Size:128 Epochs:10 Dense Count:128 2nd Dropout %:0.3
+Accuracy: 0.9915
+Train Time: 50449
+
+Batch Size:128 Epochs:10 Dense Count:128 2nd Dropout %:0.7
+Accuracy: 0.991
+Train Time: 50169
+
+Batch Size:64 Epochs:10 Dense Count:64 2nd Dropout %:0.5
+Accuracy: 0.9909
+Train Time: 76916
+
+Batch Size:64 Epochs:10 Dense Count:128 2nd Dropout %:0.5
+Accuracy: 0.991
+Train Time: 75888
+
+Batch Size:64 Epochs:10 Dense Count:256 2nd Dropout %:0.5
+Accuracy: 0.9907
+Train Time: 84575
+
+Batch Size:128 Epochs:10 Dense Count:64 2nd Dropout %:0.5
+Accuracy: 0.9905
+Train Time: 51245
+
+Batch Size:128 Epochs:10 Dense Count:128 2nd Dropout %:0.5
+Accuracy: 0.9926
+Train Time: 51696
+
+Batch Size:128 Epochs:10 Dense Count:256 2nd Dropout %:0.5
+Accuracy: 0.9925
+Train Time: 53966
+
+Batch Size:256 Epochs:10 Dense Count:64 2nd Dropout %:0.5
+Accuracy: 0.9899
+Train Time: 39018
+
+Batch Size:256 Epochs:10 Dense Count:128 2nd Dropout %:0.5
+Accuracy: 0.9908
+Train Time: 38715
+
+Batch Size:256 Epochs:10 Dense Count:256 2nd Dropout %:0.5
+Accuracy: 0.9902
+Train Time: 44188
+
